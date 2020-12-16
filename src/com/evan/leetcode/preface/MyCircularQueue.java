@@ -24,7 +24,7 @@ public class MyCircularQueue {
      *
      * @return
      */
-    int front() {
+    int Front() {
         if (this.isEmpty()) {
             return -1;
         }
@@ -76,7 +76,13 @@ public class MyCircularQueue {
         if (this.isEmpty()) {
             return false;
         }
-        circularQueue[startPoint] = -1;
+
+        if(startPoint == endPoint){
+            startPoint = -1;
+            endPoint = -1;
+            return true;
+        }
+
         startPoint = forwardPointer(startPoint);
         return true;
     }
